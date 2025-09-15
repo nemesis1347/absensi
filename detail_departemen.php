@@ -211,7 +211,9 @@ function next_month($ym){
                 <th>Izin Dispensasi</th>
                 <th>Izin Keluar</th>
                 <th>Total</th>
+                <th>Hapus</th>
                 <th>Aksi</th>
+
             </tr>
         </thead>
         <tbody>
@@ -235,7 +237,14 @@ function next_month($ym){
                 <td><?= (int)$r['izin_dispensasi']; ?></td>
                 <td><?= (int)$r['izin_keluar']; ?></td>
                 <td><?= (int)$r['total_absen']; ?></td>
-                <td><a class="btn" href="detail_karyawan.php?id=<?= $r['id'] ?>&bulan=<?= $filter_bulan ?>">Detail</a></td>
+                <td>
+                    <a class="btn" href="detail_karyawan.php?id=<?= $r['id'] ?>&bulan=<?= $filter_bulan ?>">Detail</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" 
+                    href="hapus_karyawan_absensi.php?id=<?= $r['id'] ?>&departemen_id=<?= $departemen_id ?>&bulan=<?= $filter_bulan ?>" 
+                    onclick="return confirm('Yakin ingin menghapus semua absensi karyawan ini di bulan terpilih?')">Delete</a>
+                </td>
             </tr>
             <?php
                 endwhile;

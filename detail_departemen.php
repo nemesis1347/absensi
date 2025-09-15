@@ -211,7 +211,7 @@ function next_month($ym){
                 <th>Izin Dispensasi</th>
                 <th>Izin Keluar</th>
                 <th>Total</th>
-                <th>Hapus</th>
+                <th> </th>
                 <th>Aksi</th>
 
             </tr>
@@ -239,6 +239,9 @@ function next_month($ym){
                 <td><?= (int)$r['total_absen']; ?></td>
                 <td>
                     <a class="btn" href="detail_karyawan.php?id=<?= $r['id'] ?>&bulan=<?= $filter_bulan ?>">Detail</a>
+                </td>
+                <td>
+                    <a class="btn btn-warning" href="edit_absensi.php?id=<?= $r['id'] ?>&bulan=<?= $filter_bulan ?>">Edit</a>
                 </td>
                 <td>
                     <a class="btn btn-danger" 
